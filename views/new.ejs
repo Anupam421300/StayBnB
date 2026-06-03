@@ -1,0 +1,52 @@
+<% layout("/layouts/biolerplate.ejs") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h1>Add new Listings</h1>
+
+    <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="listings[title]" class="form-control" required>
+        <div class="invalid-feedback">not valid title</div>
+      </div>
+
+      <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listings[description]" class="form-control" required></textarea>
+        <div class="invalid-feedback">not valid description</div>
+      </div>
+
+      
+
+       <div>
+        <label for="image" class="form-label">Upload listing image </label>
+        <input type="file" name="listings[image]" class="form-control" required>
+        
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" name="listings[price]" class="form-control" required>
+          <div class="invalid-feedback">not valid price</div>
+          <div class="valid-feedback">price look good</div>
+        </div>
+
+        <div class="col-8">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" name="listings[location]" class="form-control" required>
+          <div class="invalid-feedback">not valid location</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listings[country]" class="form-control" required>
+        <div class="invalid-feedback">not valid country</div>
+      </div>
+
+      <button class="btn btn-dark mt-3">submit</button>
+    </form>
+  </div>
+</div>
