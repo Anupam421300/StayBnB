@@ -158,7 +158,7 @@ app.all("/{*splat}",(req,res,next)=>{
 
 app.use((err,req,res,next)=>{
     let {statusCode=404,message="something erro"}=err;
-  //console.log(err)
+    console.log(err)
     res.status(statusCode).render("error.ejs",{err});
 });
 

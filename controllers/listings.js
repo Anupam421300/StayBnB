@@ -48,6 +48,9 @@ module.exports.showListing = async (req, res) => {
     let list = await Listing.findById(id)
         .populate({ path: "reviews", populate: { path: "author" } })
         .populate("owner");
+
+        console.log(list.reviews)
+        
     if (!list) {
 
         req.flash("error", "Listing You are trying to accese is not exist...")
